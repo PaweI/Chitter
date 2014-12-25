@@ -19,6 +19,12 @@ Feature: User can use Chitter
     Then fill that form and click Sign up
     And User should see homepage with welcome message
 
+  Scenario: User Sign up with wrong data
+    When User fill username already been taken
+    When User fill email already been taken
+    When User fill wrong password confirmation and click on Sign up
+    Then Should see list of error messages
+
 
 
 

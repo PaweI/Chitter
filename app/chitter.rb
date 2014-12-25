@@ -1,6 +1,7 @@
 require 'data_mapper'
 require 'sinatra/base'
 require 'haml'
+require 'rack-flash'
 
 env = ENV['RACK_ENV'] || 'development'
 
@@ -16,6 +17,8 @@ DataMapper.auto_upgrade!
 class Chitter < Sinatra::Base
 
   enable :sessions
+
+  use Rack::Flash
 
   configure :production do
     set :haml, { :ugly=>true }
@@ -47,6 +50,7 @@ class Chitter < Sinatra::Base
       session[:user_id] = user.id
       redirect to '/'
     else
+      flash.now[:errors] = user.errors.full_messages
       haml :"/users/new"
     end
   end

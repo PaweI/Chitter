@@ -1,12 +1,9 @@
-!!!
-%html
-  %body
-    Sign up
-    %form{action: "/users", method: "post"}
-      %p <input type="text" name="name" placeholder="Name"> 
-      %p <input type="text" name="username" placeholder="Username"> 
-      %p <input type="text" name="email" placeholder="Email"> 
-      %p <input type="password" name="password" placeholder="Password"> 
-      %p <input type="password" name="password_confirmation" placeholder="Confirm password"> 
-      %input{type: "submit", value: "Sign up"}
+Sign up
+%form{action: "/users", method: "post"}
+  %p <input type="text" name="name" placeholder="Name"> 
+  %p <input type="text" name="username" placeholder="Username"> 
+  %p <input type="text" name="email" placeholder="Email"> 
+  %p <input type="password" name="password" placeholder="Password"> 
+  %p <input type="password" name="password_confirmation" placeholder="Confirm password"> 
+  %input{type: "submit", value: "Sign up"}
 
