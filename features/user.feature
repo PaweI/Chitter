@@ -10,12 +10,16 @@ Feature: User can use Chitter
 
   Scenario: User can Sign up 
     When open home page and click on Sign up
-    Then user should see the following form:
+    And user should see the following form:
     | Enter your name          |
     | Enter your username      |
     | Enter your email         |
     | Enter your password      |
     | Type your password again |
+    Then fill that form and click Sign up
+    And User should see homepage with welcome message
+
+
 
 
 
