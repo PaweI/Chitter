@@ -34,7 +34,8 @@ Write a little Twitter clone that will allow the users to post messages to a pub
 - Capybara
 - Postgresql
 - Datamapper
-- HTML/CSS
+- HAML(HTML)
+- CSS
 
 ####HOW TO RUN
 

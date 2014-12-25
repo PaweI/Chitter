@@ -107,4 +107,12 @@ describe User do
     end
   end
 
+  context 'can be retrieved with passing correct data' do
+    it "passing correct password and email" do
+      create_user
+      user = User.authenticate("test@test.com", "helloworld")
+      expect(user).not_to be nil
+    end
+  end
+
 end
