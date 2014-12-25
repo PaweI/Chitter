@@ -3,16 +3,7 @@
   %head
     %title Chitter 
   %body
-    - if current_user
-      = "Welcome, #{current_user.username}"
-
-    - if flash[:notice]
-      = flash[:notice]
-
-    - if flash[:errors]
-      = "Sorry, there were some problems with your submition"
-      %ul
-      - flash[:errors].each do |error|
-        %li #{error}
-
+ 
+    = haml :flash
+    
     = yield

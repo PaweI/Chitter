@@ -45,6 +45,7 @@ end
 When(/^User fill username already been taken$/) do
   visit '/users/new' 
   create_user
+  click_on 'Log out'
   click_on 'Sign up'
   fill_in 'name', with: "Samuel Russell Hampden Joseph"
   fill_in 'username', with: "tansaku"

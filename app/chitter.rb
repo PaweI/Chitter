@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'sinatra/base'
+require 'sinatra/partial'
 require 'haml'
 require 'rack-flash'
 
@@ -21,6 +22,12 @@ class Chitter < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
+  @current_page = nil
+
+  configure do
+    register Sinatra::Partial
+    set :partial_template_engine, :haml
+  end
 
   configure :production do
     set :haml, { :ugly=>true }
@@ -58,6 +65,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/sessions/new' do
+    @current_page = "new session"
     haml :"sessions/new"
   end
 

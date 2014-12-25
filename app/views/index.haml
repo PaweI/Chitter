@@ -1,14 +1,18 @@
 !!!
 %html 
   %body
+  
+  - if current_user
 
-  %a{href:"/users/new"} Sign up
+    = "Welcome, #{current_user.username}"
+    %form{action: "/sessions", method: "post"}
+      %input{type: "hidden", name: "_method", value: "delete"}
+      %input{type: "submit", value: "Log out"}
 
-  %a{href:"sessions/new"} Log in
+  - else
 
-  %form{action: "/sessions", method: "post"}
-    %input{type: "hidden", name: "_method", value: "delete"}
-    %input{type: "submit", value: "Log out"}
+    %a{href:"/users/new"} Sign up
+    %a{href:"sessions/new"} Log in
 
 
 
