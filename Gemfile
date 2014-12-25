@@ -6,10 +6,12 @@ gem 'dm-postgres-adapter'
 gem 'rake'
 gem 'rack-flash3'
 gem 'rest-client'
+gem 'haml'
 gem 'sinatra'
 gem 'sinatra-partial'
 
 group :development, :test do
+  
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'

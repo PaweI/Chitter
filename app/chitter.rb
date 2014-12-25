@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'sinatra/base'
+require 'haml'
 
 env = ENV['RACK_ENV'] || 'development'
 
@@ -13,8 +14,21 @@ DataMapper.auto_upgrade!
 
 
 class Chitter < Sinatra::Base
+
+  configure :production do
+    set :haml, { :ugly=>true }
+  end
+
+  configure :development do
+    set :haml, { :ugly=>true }
+  end
+
   get '/' do
-    'Hello Chitter!'
+    haml :index
+  end
+
+  get '/users/new' do
+    haml :"users/new"
   end
 
   # start the server if ruby file executed directly
