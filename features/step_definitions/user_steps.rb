@@ -17,9 +17,9 @@ When(/^open home page and click on Sign up$/) do
 end
 
 Then(/^user should see the following form:$/) do |table|
-  expect(page).to have_content("Enter your name")
-  expect(page).to have_content("Enter your username")
-  expect(page).to have_content("Enter your email")
-  expect(page).to have_content("Enter your password")
-  expect(page).to have_content("Type your password again")
+  expect(page).to have_selector("input[placeholder='Name']")
+  expect(page).to have_selector("input[placeholder='Username']")
+  expect(page).to have_selector("input[placeholder='Email']")
+  expect(page).to have_selector("input[placeholder='Password']")
+  expect(page).to have_selector("input[placeholder='Repeat password']")
 end

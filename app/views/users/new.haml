@@ -1,9 +1,12 @@
 !!!
 %html
   %body
-    %form
-      Enter your name <input type="text" name="name"> 
-      Enter your username <input type="text" name="username"> 
-      Enter your email <input type="text" name="email"> 
-      Enter your password <input type="text" name="password"> 
-      Type your password again <input type="text" name="password_again"> 
+    Sign up
+    %form{action: "/users", method: "post"}
+      %p <input type="text" name="name" placeholder="Name"> 
+      %p <input type="text" name="username" placeholder="Username"> 
+      %p <input type="text" name="email" placeholder="Email"> 
+      %p <input type="text" name="password" placeholder="Password"> 
+      %p <input type="text" name="password_confirmation" placeholder="Repeat password"> 
+      %input{type: "submit", value: "Sign up"}
+
