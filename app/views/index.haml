@@ -15,5 +15,14 @@
     %a{href:"sessions/new"} Log in
 
 
+  %form{action: "/peeps/new", method: "post"}
+    %input{type: "text", name: "peep", size: "200", maxlength: "140"}
+    %input{type: "submit", value: "PEEP"}
+
+    %ul 
+    - @peeps.each do |peep|
+      %li #{peep.message}
+
+
 
 

@@ -33,7 +33,13 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
+    @peeps = Peep.all
     haml :index
+  end
+
+  post '/peeps/new' do
+    Peep.create(params[:peep])
+    redirect to '/'
   end
 
   # start the server if ruby file executed directly
