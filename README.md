@@ -10,9 +10,9 @@ Write a little Twitter clone that will allow the users to post messages to a pub
   - [X] username and email are unique
   - [X] log in
   - [X] log out
-  - [ ] post message (peep) to board. It will have the name of the sender and their user handle.
-  - [ ] user can only peep if he is logged in
-  - [ ] peeps in chronological order. User don't have to be logged in to see the peeps.
+  - [] post message (peep) to board. It will have the name of the sender and their user handle.
+  - [X] user can only peep if he is logged in
+  - [X] peeps in chronological order. User don't have to be logged in to see the peeps.
   - [X] use bcrypt to secure passwords
   - [X] use datamapper and postgres to save the data
 

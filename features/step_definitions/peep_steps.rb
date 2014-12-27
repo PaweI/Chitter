@@ -65,3 +65,10 @@ Then(/^should see LAST peep first and so on up to the first one$/) do
   expect(page).to have_selector("ul li:nth-child(2)", text: "Show must go on")
   expect(page).to have_selector("ul li:nth-child(3)", text: "Hello World")
 end
+
+Then(/^should see time when peep was created$/) do
+  create_user
+  fill_in 'peep', with: "Hello World"
+  click_on 'PEEP'
+  expect(page).to have_content("seconds ago")
+end

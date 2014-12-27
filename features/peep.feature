@@ -23,4 +23,8 @@ Feature: User can post a peep
     And create 3 peeps 
     Then should see LAST peep first and so on up to the first one
 
+  Scenario: User can see time when peep was submitted
+    When open main page
+    Then should see time when peep was created
+
 
