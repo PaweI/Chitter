@@ -8,3 +8,8 @@ Feature: User can post a peep
     When open main page 
     And fill peep box and click PEEP
     Then should see peep on a page
+
+  Scenario: User can not Peep when logged out
+    When open main page
+    And click peep
+    Then should see error

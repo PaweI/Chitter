@@ -38,8 +38,13 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps/new' do
-    Peep.create(params[:peep])
-    redirect to '/'
+    if current_user == nil
+      flash[:errors] = ["You can not Peep when not logged in"]
+      redirect to '/'
+    else
+      Peep.create(params[:peep])
+      redirect to '/'
+    end
   end
 
   # start the server if ruby file executed directly
