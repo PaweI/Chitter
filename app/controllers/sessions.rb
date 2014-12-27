@@ -11,7 +11,7 @@ class Chitter < Sinatra::Base
       redirect to '/'
     else 
       flash[:errors] = ["Email or password is incorrect"]
-      haml :"sessions/new"
+      haml :"/sessions/new" #ask about redirect to
     end
   end
 

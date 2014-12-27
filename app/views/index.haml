@@ -20,8 +20,8 @@
     %input{type: "submit", value: "PEEP"}
 
     %ul 
-    - @peeps.each do |peep|
-      %li #{peep.message}
+      - @peeps.reverse.each do |peep|
+        %li #{peep.message}
 
 
 
