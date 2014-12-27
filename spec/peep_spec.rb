@@ -2,23 +2,40 @@ require 'spec_helper'
 
 describe Peep do
 
-  context "can be" do
+  def create_user
+    User.create(name: "Vasya Pupkin",
+                username: "glitch",
+                email: "test@test.com",
+                password: "helloworld",
+                password_confirmation: "helloworld")
+  end
 
-    it "created in DB" do
+  let(:user) { User.first }
+
+  context "can" do
+
+    it 'not be created without user' do
       expect(Peep.count).to eq 0
-      Peep.create("Hello Sam")
+      Peep.create(message: "Hello Sam")
+      expect(Peep.count).to eq 0
+    end
+
+    it "be created in DB" do
+      create_user
+      expect(Peep.count).to eq 0
+      Peep.create(message: "Hello Sam", user_id: user.id)
       expect(Peep.count).to eq 1
       expect(Peep.first.message).to eq "Hello Sam"
     end
 
-    it "created with time property" do 
-      Peep.create("Hello Sam")
+    it "be created with time property" do 
+      create_user
+      Peep.create(message: "Hello Sam", time: Time.now, user_id: user.id)
       expect(Peep.first.time.hour).to eq Time.now.hour
-      expect(Peep.first.message).to eq "Hello Sam"
     end
 
-    it "max up to 140 characters long" do
-      Peep.create("Hello"*30)
+    it "be max up to 140 characters long" do
+      Peep.create(message: "Hello"*30, user_id:3)
       expect(Peep.count).to eq 0
     end
     
