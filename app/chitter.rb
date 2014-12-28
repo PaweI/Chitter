@@ -4,8 +4,10 @@ require 'sinatra/partial'
 require 'haml'
 require 'rack-flash'
 
+require_relative "controllers/app"
 require_relative "controllers/sessions"
 require_relative "controllers/users"
+require_relative "controllers/peeps"
 require_relative "helpers/application_helper"
 require_relative "datamapper_setup"
 
@@ -30,21 +32,6 @@ class Chitter < Sinatra::Base
 
   configure :development do
     set :haml, { :ugly=>true }
-  end
-
-  get '/' do
-    @peeps = Peep.all
-    haml :index
-  end
-
-  post '/peeps/new' do
-    if current_user == nil
-      flash[:errors] = ["You can not Peep when not logged in"]
-      redirect to '/'
-    else
-      current_user.peeps.new(:message => params[:peep], time: Time.now).save!
-      redirect to '/'
-    end
   end
 
   # start the server if ruby file executed directly
