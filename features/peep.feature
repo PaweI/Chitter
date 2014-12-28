@@ -27,4 +27,8 @@ Feature: User can post a peep
     When open main page
     Then should see time when peep was created
 
+  Scenario: Name and handle of creator in Peep
+    When open main page
+    Then should see Peep with name and handler of it's creator
+
 

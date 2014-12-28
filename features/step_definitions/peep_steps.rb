@@ -72,3 +72,11 @@ Then(/^should see time when peep was created$/) do
   click_on 'PEEP'
   expect(page).to have_content("seconds ago")
 end
+
+Then(/^should see Peep with name and handler of it's creator$/) do
+  create_user
+  fill_in 'peep', with: "Hello World"
+  click_on 'PEEP'
+  click_on 'Log out'
+  expect(page).to have_content "tansaku"
+end
