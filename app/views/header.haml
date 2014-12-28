@@ -1,0 +1,16 @@
+- if current_user
+
+  = "Welcome, #{current_user.username}"
+  %form{action: "/sessions", method: "post"}
+    %input{type: "hidden", name: "_method", value: "delete"}
+    %input{type: "submit", value: "Log out"}
+
+- else
+
+  %a{href:"/users/new"} Sign up
+  %a{href:"sessions/new"} Log in
+
+
+%form{action: "/peeps/new", method: "post"}
+  %input{type: "text", name: "peep", size: "200", maxlength: "140"}
+  %input{type: "submit", value: "PEEP"}

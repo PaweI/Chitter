@@ -6,7 +6,7 @@ def create_user
   fill_in 'email', with: "sam@makersacademy.com"
   fill_in 'password', with: "testtest"
   fill_in 'password_confirmation', with: "testtest"
-  click_on "Sign up"
+  click_button "Sign up"
 end
 
 When(/^opening main page$/) do
@@ -58,7 +58,7 @@ end
 Then(/^User fill wrong password confirmation and click on Sign up$/) do
   fill_in 'password', with: "testtest"
   fill_in 'password_confirmation', with: "test"
-  click_on "Sign up"
+  click_button "Sign up"
 end
 
 
@@ -93,7 +93,7 @@ Then(/^can enter loggin details$/) do
   click_on "Log in"
   fill_in "Email", with: "sam@makersacademy.com"
   fill_in "Password", with: "testtest"
-  click_on "Log in"
+  click_button "Log in"
 end
 
 Then(/^should see Welcome message$/) do
