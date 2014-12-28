@@ -22,16 +22,32 @@
     %ul 
       - @peeps.reverse.each do |peep|
         - if (Time.now - peep.time) < 60
-          %li #{peep.message} - #{(Time.now - peep.time).to_i} seconds ago
+          %li 
+            %p #{peep.user.name} 
+            %p #{peep.user.username} 
+            %p #{peep.message} 
+            %p #{(Time.now - peep.time).to_i} seconds ago
 
         - elsif (Time.now - peep.time) > 60 && (Time.now - peep.time) < 3600
-          %li #{peep.message} - #{(Time.now - peep.time).to_i / 60} minutes ago
+          %li
+            %p #{peep.user.name} 
+            %p #{peep.user.username}  
+            %p #{peep.message}
+            %p #{(Time.now - peep.time).to_i / 60} minutes ago
 
         - elsif (Time.now - peep.time) > 3600 && (Time.now - peep.time) < 86400
-          %li #{peep.message} - #{(Time.now - peep.time).to_i / 3600} hours ago
+          %li 
+            %p #{peep.user.name} 
+            %p #{peep.user.username}
+            %p #{peep.message} 
+            %p #{(Time.now - peep.time).to_i / 3600} hours ago
 
         - else
-          %li #{peep.message} - #{((Time.now - peep.time)/ 86400).to_i} days ago
+          %li 
+            %p #{peep.user.name} 
+            %p #{peep.user.username}
+            %p #{peep.message}
+            %p #{((Time.now - peep.time)/ 86400).to_i} days ago
 
 
 

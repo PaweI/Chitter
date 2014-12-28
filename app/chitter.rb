@@ -42,7 +42,7 @@ class Chitter < Sinatra::Base
       flash[:errors] = ["You can not Peep when not logged in"]
       redirect to '/'
     else
-      Peep.create(params[:peep])
+      current_user.peeps.new(:message => params[:peep], time: Time.now).save!
       redirect to '/'
     end
   end
