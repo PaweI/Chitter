@@ -20,6 +20,7 @@ class Chitter < Sinatra::Base
   use Rack::MethodOverride
 
   set :views, File.join(root, "..", "views") 
+  set :public_folder, File.join(root, '../..', 'public') 
 
   configure do
     register Sinatra::Partial
