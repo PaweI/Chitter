@@ -1,3 +1,19 @@
 body {
-  background-color: grey;
+
+}
+
+.header {
+  margin: -10px;
+  padding: 20px;
+  background-color: black;
+}
+
+.sign-in {
+  text-align: right;
+  text-decoration: none;
+  color: black;
+}
+
+.welcome {
+
 }
