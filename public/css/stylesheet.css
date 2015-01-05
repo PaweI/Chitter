@@ -15,8 +15,8 @@ body {
 }
 
 .peep {
-  margin-left: 40%;
-  margin-top: -40px;
+  margin-left: 5%;
+  margin-top: 70px;
   position: absolute;
   width: 200px;
   height: 100px;
@@ -27,6 +27,21 @@ textarea {
   color: purple;
 }
 
-.welcome {
+.peeps{
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 40px;
+}
 
+.peeps li:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+
+.error {
+  margin-top: -50px;
+  position: absolute;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
 }
