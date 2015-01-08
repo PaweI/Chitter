@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/palyrex/Chitter/badges/gpa.svg)](https://codeclimate.com/github/palyrex/Chitter)
+
 ####Week 4 Challenge at Makers Academy!
 
 ####SYNOPSIS
