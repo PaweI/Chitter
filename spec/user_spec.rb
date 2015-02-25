@@ -3,58 +3,58 @@ require 'spec_helper'
 describe User do
 
   def create_user
-    User.create(name: "Vasya Pupkin",
-                username: "glitch",
-                email: "test@test.com",
-                password: "helloworld",
-                password_confirmation: "helloworld")
+    User.create(name: 'Vasya Pupkin',
+                username: 'glitch',
+                email: 'test@test.com',
+                password: 'helloworld',
+                password_confirmation: 'helloworld')
   end
 
   def user_short_password
-    User.create(name: "Vasya Pupkin",
-                username: "glitch",
-                email: "test@test.com",
-                password: "hello",
-                password_confirmation: "hello")
+    User.create(name: 'Vasya Pupkin',
+                username: 'glitch',
+                email: 'test@test.com',
+                password: 'hello',
+                password_confirmation: 'hello')
   end
 
   def user_long_password
-    User.create(name: "Vasya Pupkin",
-                username: "glitch",
-                email: "test@test.com",
-                password: ("hello"*7),
-                password_confirmation: ("hello"*7))
+    User.create(name: 'Vasya Pupkin',
+                username: 'glitch',
+                email: 'test@test.com',
+                password: ('hello'*7),
+                password_confirmation: ('hello'*7))
   end
 
   def user_no_password_confrmation
-    User.create(name: "Vasya Pupkin",
-                username: "glitch",
-                email: "test@test.com",
-                password: "helloworld")
+    User.create(name: 'Vasya Pupkin',
+                username: 'glitch',
+                email: 'test@test.com',
+                password: 'helloworld')
   end
 
    def user_wrong_password_confrmation
-    User.create(name: "Vasya Pupkin",
-                username: "glitch",
-                email: "test@test.com",
-                password: "helloworld",
-                password_confirmation: "world")
+    User.create(name: 'Vasya Pupkin',
+                username: 'glitch',
+                email: 'test@test.com',
+                password: 'helloworld',
+                password_confirmation: 'world')
   end
 
   def user_repeatable_email
-    User.create(name: "Darth Weider",
-                username: "darklord",
-                email: "test@test.com",
-                password: "testtest",
-                password_confirmation: "testtest")
+    User.create(name: 'Darth Weider',
+                username: 'darklord',
+                email: 'test@test.com',
+                password: 'testtest',
+                password_confirmation: 'testtest')
   end
 
   def user_repeatable_username
-    User.create(name: "Darth Weider",
-                username: "glitch",
-                email: "darthweider@gmail.com",
-                password: "testtest",
-                password_confirmation: "testtest")
+    User.create(name: 'Darth Weider',
+                username: 'glitch',
+                email: 'darthweider@gmail.com',
+                password: 'testtest',
+                password_confirmation: 'testtest')
   end
     
 
@@ -68,8 +68,8 @@ describe User do
     it 'retrieved from db' do
       create_user
       user = User.first
-      expect(user.email).to eq "test@test.com"
-      expect(user.username).to eq "glitch"
+      expect(user.email).to eq 'test@test.com'
+      expect(user.username).to eq 'glitch'
     end
   end
 
@@ -108,9 +108,9 @@ describe User do
   end
 
   context 'can be retrieved with passing correct data' do
-    it "passing correct password and email" do
+    it 'passing correct password and email' do
       create_user
-      user = User.authenticate("test@test.com", "helloworld")
+      user = User.authenticate('test@test.com', 'helloworld')
       expect(user).not_to be nil
     end
   end

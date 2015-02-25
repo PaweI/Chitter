@@ -4,12 +4,12 @@ require 'sinatra/partial'
 require 'haml'
 require 'rack-flash'
 
-require_relative "controllers/app"
-require_relative "controllers/sessions"
-require_relative "controllers/users"
-require_relative "controllers/peeps"
-require_relative "helpers/application_helper"
-require_relative "datamapper_setup"
+require_relative 'controllers/app'
+require_relative 'controllers/sessions'
+require_relative 'controllers/users'
+require_relative 'controllers/peeps'
+require_relative 'helpers/application_helper'
+require_relative 'datamapper_setup'
 
 
 class Chitter < Sinatra::Base
@@ -19,7 +19,7 @@ class Chitter < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-  set :views, File.join(root, "..", "views") 
+  set :views, File.join(root, '..', 'views') 
   set :public_folder, File.join(root, '../..', 'public') 
 
   configure do

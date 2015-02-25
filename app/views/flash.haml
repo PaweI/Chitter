@@ -2,8 +2,8 @@
   = flash[:notice]
 
 - if flash[:errors]
-  %section{class: "error"}
-    = "Sorry, there were some problems with your submission"
+  %section{class: 'error'}
+    = 'Sorry, there were some problems with your submission'
     %ul
     - flash[:errors].each do |error|
       %li #{error}
