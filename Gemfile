@@ -11,12 +11,10 @@ gem 'sinatra'
 gem 'sinatra-partial'
 
 group :development, :test do
-  
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'rspec' 
-  
+  gem 'rspec'
 end

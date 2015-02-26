@@ -50,7 +50,7 @@ Then(/^should see a peep$/) do
   expect(page).to have_content 'Dream on, dream on..'
 end
 
-When(/^create (\d+) peeps$/) do |arg1|
+When(/^create (\d+) peeps$/) do |_arg1|
   create_user
   fill_in 'peep', with: 'Hello World'
   click_on 'PEEP'

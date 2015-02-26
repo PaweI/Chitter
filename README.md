@@ -22,11 +22,6 @@ Write a little Twitter clone that will allow the users to post messages to a pub
 
   - [ ] in order to start conversation user will be able to reply to a peep from another user.
 
-
-####MY APPROACH
-
-...
-
 ####TECHNOLOGIES:
 
 - Sinatra 
@@ -39,16 +34,7 @@ Write a little Twitter clone that will allow the users to post messages to a pub
 - HAML(HTML)
 - CSS
 
-####HOW TO RUN
 
-
-####CODE SNIPPET
-
-
-####WHAT I'VE LEARNT
-
-
-####FUTURE IMPROVEMENTS
 
 
 

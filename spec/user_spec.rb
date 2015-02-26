@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-
   def create_user
     User.create(name: 'Vasya Pupkin',
                 username: 'glitch',
@@ -22,8 +21,8 @@ describe User do
     User.create(name: 'Vasya Pupkin',
                 username: 'glitch',
                 email: 'test@test.com',
-                password: ('hello'*7),
-                password_confirmation: ('hello'*7))
+                password: ('hello' * 7),
+                password_confirmation: ('hello' * 7))
   end
 
   def user_no_password_confrmation
@@ -33,13 +32,13 @@ describe User do
                 password: 'helloworld')
   end
 
-   def user_wrong_password_confrmation
+  def user_wrong_password_confrmation
     User.create(name: 'Vasya Pupkin',
                 username: 'glitch',
                 email: 'test@test.com',
                 password: 'helloworld',
                 password_confirmation: 'world')
-  end
+ end
 
   def user_repeatable_email
     User.create(name: 'Darth Weider',
@@ -56,7 +55,6 @@ describe User do
                 password: 'testtest',
                 password_confirmation: 'testtest')
   end
-    
 
   context 'can be created and retrieved from DB if has correct data' do
     it 'created' do
@@ -114,5 +112,4 @@ describe User do
       expect(user).not_to be nil
     end
   end
-
 end

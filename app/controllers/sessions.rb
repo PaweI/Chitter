@@ -1,5 +1,4 @@
 class Chitter < Sinatra::Base
-
   get '/sessions/new' do
     haml :"sessions/new"
   end
@@ -9,9 +8,9 @@ class Chitter < Sinatra::Base
     if user
       session[:user_id] = user.id
       redirect to '/'
-    else 
+    else
       flash[:errors] = ['Email or password is incorrect']
-      redirect to '/canary/new/' #ask about redirect to
+      redirect to '/canary/new/' # ask about redirect to
     end
   end
 
@@ -20,5 +19,4 @@ class Chitter < Sinatra::Base
     session[:user_id] = nil
     redirect to '/'
   end
-
 end

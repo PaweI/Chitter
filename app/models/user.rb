@@ -1,18 +1,17 @@
 require 'bcrypt'
 
 class User
-
   include DataMapper::Resource
 
-  attr_reader   :password
+  attr_reader :password
   attr_accessor :password_confirmation
 
   has n, :peeps
 
   property :id,              Serial
   property :name,            String
-  property :username,        String, :unique => true, :message => 'Username already taken'
-  property :email,           String, :unique => true, :message => 'Email already taken'
+  property :username,        String, unique: true, message: 'Username already taken'
+  property :email,           String, unique: true, message: 'Email already taken'
   property :password_digest, Text
 
   validates_confirmation_of :password, message: 'Your passwords don\'t match'
@@ -33,5 +32,3 @@ class User
     end
   end
 end
-
-

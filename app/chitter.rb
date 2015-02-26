@@ -11,16 +11,14 @@ require_relative 'controllers/peeps'
 require_relative 'helpers/application_helper'
 require_relative 'datamapper_setup'
 
-
 class Chitter < Sinatra::Base
-
   enable :sessions
 
   use Rack::Flash
   use Rack::MethodOverride
 
-  set :views, File.join(root, '..', 'views') 
-  set :public_folder, File.join(root, '../..', 'public') 
+  set :views, File.join(root, '..', 'views')
+  set :public_folder, File.join(root, '../..', 'public')
 
   configure do
     register Sinatra::Partial
@@ -28,13 +26,13 @@ class Chitter < Sinatra::Base
   end
 
   configure :production do
-    set :haml, { :ugly=>true }
+    set :haml, ugly: true
   end
 
   configure :development do
-    set :haml, { :ugly=>true }
+    set :haml, ugly: true
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

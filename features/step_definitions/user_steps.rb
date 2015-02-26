@@ -26,8 +26,8 @@ When(/^open home page and click on Sign up$/) do
   click_on 'Sign up'
 end
 
-And(/^user should see the following form:$/) do |table|
-  expect(page).to have_selector 'input[placeholder="Name"]' 
+And(/^user should see the following form:$/) do |_table|
+  expect(page).to have_selector 'input[placeholder="Name"]'
   expect(page).to have_selector 'input[placeholder="Username"]'
   expect(page).to have_selector 'input[placeholder="Email"]'
   expect(page).to have_selector 'input[placeholder="Password"]'
@@ -43,7 +43,7 @@ Then(/^User should see homepage with welcome message$/) do
 end
 
 When(/^User fill username already been taken$/) do
-  visit '/users/new' 
+  visit '/users/new'
   create_user
   click_on 'Log out'
   click_on 'Sign up'
@@ -61,11 +61,10 @@ Then(/^User fill wrong password confirmation and click on Sign up$/) do
   click_button 'Sign up'
 end
 
-
 Then(/^should see list of error messages$/) do
   expect(page).to have_content 'Your passwords don\'t match'
   expect(page).to have_content 'Username already taken'
-  expect(page).to have_content 'Email already taken'  
+  expect(page).to have_content 'Email already taken'
 end
 
 When(/^user logged in$/) do
@@ -99,5 +98,3 @@ end
 Then(/^should see Welcome message$/) do
   expect(page).to have_content 'Welcome'
 end
-
-

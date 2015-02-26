@@ -7,6 +7,5 @@ class Peep
   property :message, Text
   property :time,    Time
 
-  validates_length_of :message, :within => 1..140
-
+  validates_length_of :message, within: 1..140
 end
